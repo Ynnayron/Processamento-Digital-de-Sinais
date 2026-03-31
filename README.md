@@ -20,7 +20,7 @@ pds_estudo_dirigido/
 │   └── resumo_teorico.md          # Fundamentação teórica completa
 ├── simulacoes/
 │   ├── simulacoes_pds.py          # Código Python comentado (5 simulações)
-    ├── discussao_tecnica.md       # Análise e interpretação dos resultados
+│   ├── discussao_tecnica.md       # Análise e interpretação dos resultados
 └── resultados/
     ├── sim1_sequencias_elementares.png
     ├── sim2_operacoes_sinais.png
