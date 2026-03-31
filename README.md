@@ -44,7 +44,7 @@ pds_estudo_dirigido/
 ---
 
 
-## 📚 Referências
+##  Referências
 
 - OPPENHEIM, A. V.; SCHAFER, R. W. *Discrete-Time Signal Processing*. Pearson, 2010.
 - LATHI, B. P. *Signal Processing and Linear Systems*. Oxford, 1998.
