@@ -1,4 +1,4 @@
-# PDS – Estudo Dirigido Parte 1
+# PDS – Estudo Dirigido 1
 ## Processamento Digital de Sinais
 
 ---
