@@ -52,4 +52,3 @@ ylabel('Número de operações');
 title(sprintf('Custo Computacional  (N = %d)', N));
 grid on;
 
-saveas(gcf,'../resultados/q06_dft_vs_fft.png');

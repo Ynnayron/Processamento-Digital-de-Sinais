@@ -39,5 +39,3 @@ xlim([0 0.5]); grid on;
 % Identificação do pico
 [pk, idx] = max(X_mag(1:N/2));
 fprintf('Frequência dominante detectada: f = %.4f (pico em índice %d)\n', f(idx), idx-1);
-
-saveas(gcf, '../resultados/q01_senoide_fft.png');

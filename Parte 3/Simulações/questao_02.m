@@ -38,4 +38,3 @@ xline(f1,'--b', sprintf('f_1=%.1f',f1),'LabelVerticalAlignment','bottom');
 xline(f2,'--r', sprintf('f_2=%.1f',f2),'LabelVerticalAlignment','bottom');
 xlim([0 0.5]); grid on;
 
-saveas(gcf,'../resultados/q02_duas_senoides.png');

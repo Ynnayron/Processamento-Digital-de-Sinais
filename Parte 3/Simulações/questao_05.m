@@ -42,4 +42,3 @@ xlabel('Freq. Normalizada'); ylabel('Magnitude');
 title('Espectro – sinal ruidoso  (pico ainda identificável)');
 xline(f0,'--k',sprintf('f_0=%.2f',f0),'LabelVerticalAlignment','bottom'); grid on;
 
-saveas(gcf,'../resultados/q05_ruido.png');

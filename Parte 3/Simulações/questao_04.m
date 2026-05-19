@@ -42,4 +42,3 @@ xlabel('Freq. Normalizada'); ylabel('Magnitude');
 title('Espectro COM janela de Hamming  – lóbulos laterais reduzidos');
 xlim([0 0.5]); grid on;
 
-saveas(gcf,'../resultados/q04_janelamento.png');

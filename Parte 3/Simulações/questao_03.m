@@ -55,4 +55,3 @@ xlabel('Frequência (Hz)'); ylabel('|X(f)|/N');
 title('Espectro – aliasing visível');
 xline(f_alias,'--k',sprintf('alias=%d Hz',f_alias)); xlim([0 fs2/2]); grid on;
 
-saveas(gcf,'../resultados/q03_aliasing.png');
