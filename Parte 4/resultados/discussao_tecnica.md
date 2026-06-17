@@ -16,3 +16,22 @@ Com a mesma frequência de corte (30 Hz), o FIR de ordem 21 apresentou um roll-o
 
 ## Questão 5 — Polos, zeros e estabilidade
 O filtro Butterworth corretamente projetado apresentou todos os polos com módulo entre 0,84 e 0,93 (dentro do círculo unitário → estável). Ao perturbar artificialmente o coeficiente de realimentação `a[1]`, um dos polos foi deslocado para módulo 4,75 — fora do círculo unitário — tornando o sistema instável. Esse experimento evidencia, de forma visual, por que a verificação da posição dos polos é etapa obrigatória no projeto de qualquer filtro IIR: pequenas mudanças nos coeficientes de realimentação podem levar um sistema estável a divergir.
+
+## Questão 6 — Resposta ao impulso finita vs infinita
+A resposta ao impulso do FIR (ordem 41) é, por definição, idêntica aos próprios coeficientes do filtro: ela se anula exatamente a partir da 41ª amostra, pois não há realimentação. Já a resposta ao impulso do IIR Butterworth ainda apresentava amplitude residual de ordem 10⁻⁹ na amostra 250 — teoricamente nunca chega a zero, apenas decai geometricamente como `|polo|^n`, confirmando a definição teórica de resposta infinita.
+
+## Questão 7 — Filtro passa-faixa
+Em um sinal com componentes de 10, 60 e 150 Hz, um passa-faixa Butterworth (banda de 45–75 Hz) preservou a componente de 60 Hz com apenas -0,2 dB de atenuação, enquanto as outras duas foram atenuadas em mais de -46 dB. O resultado mostra como um passa-faixa combina, na prática, as características de um passa-alta e um passa-baixa para isolar uma região espectral específica.
+
+## Questão 8 — Fase linear vs não linear
+Ajustando uma reta à fase do FIR na banda de passagem, o desvio máximo foi de 2,7×10⁻¹⁵ rad — fase exatamente linear, garantida pela simetria dos coeficientes. A fase do IIR, por outro lado, descreve uma curva visivelmente não linear. Esse resultado é a confirmação numérica direta do conceito teórico de fase linear discutido no resumo.
+
+## Questão 9 — Atraso de grupo
+O atraso de grupo do FIR foi constante em **30 amostras** em toda a banda de passagem (valor teórico (ordem-1)/2, confirmado numericamente). O atraso do IIR variou entre 13,8 e 20,8 amostras dentro da mesma banda, com um pico próximo à frequência de corte. Em um sistema de comunicação, essa variação significa que diferentes componentes de frequência de um mesmo símbolo chegariam ao receptor em instantes diferentes, gerando interferência entre símbolos vizinhos (ISI) — por isso sistemas sensíveis a forma de onda costumam preferir FIR ou exigir equalização de fase quando usam IIR.
+
+## Questão 10 — Aplicação prática: suavização de sinal de acelerômetro
+Um sinal sintético de acelerômetro (movimento real a 1,5 Hz, somado a ruído eletrônico e vibração estrutural a 45 Hz) foi suavizado por um FIR de ordem 31 com corte em 5 Hz. O desvio padrão do erro em relação ao movimento real caiu de 0,650 para 0,137 m/s² (redução de **78,9%**), ao custo de um atraso de 75 ms. Esse exemplo conecta diretamente com a aplicação tecnológica citada no enunciado ("redução de ruído em sensores") e com o compromisso fundamental discutido na teoria: mais filtragem (corte mais baixo, ordem mais alta) reduz ruído, mas aumenta o atraso introduzido — uma escolha de projeto que depende da aplicação (em malhas de controle em tempo real, esse atraso pode ser um fator limitante).
+
+## Síntese geral
+As dez simulações, em conjunto, reproduzem experimentalmente os conceitos do resumo teórico: FIR oferece estabilidade incondicional e fase linear ao custo de maior ordem; IIR oferece seletividade eficiente ao custo de fase não linear e da necessidade de verificar estabilidade; e a escolha entre eles, em uma aplicação real (como o problema norteador de monitoramento agrícola), depende do compromisso entre custo computacional, atraso aceitável e sensibilidade à distorção de forma de onda.
+
