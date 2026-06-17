@@ -1,6 +1,6 @@
 # Estudo Dirigido — Parte 4: Filtros Digitais
 
-Repositório da Parte 4 do Estudo Dirigido de Processamento Digital de Sinais (IFPB), sobre projeto e análise de filtros digitais (FIR e IIR).
+Repositório da Parte 4 do Estudo Dirigido de Processamento Digital de Sinais, sobre projeto e análise de filtros digitais (FIR e IIR).
 
 ## Problema norteador (PBL)
 
